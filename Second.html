@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification - Question 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+        }
+        .error {
+            color: red;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter the pin of Yash's iPhone</h1>
+    <form id="questionForm">
+        <input type="text" id="answer" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p class="error" id="errorMessage" aria-live="assertive"></p>
+
+    <script>
+        document.getElementById('questionForm').onsubmit = function(event) {
+            event.preventDefault();
+            const answer = document.getElementById('answer').value.trim();
+            if (answer === "927465") {
+                window.location.href = 'question3.html';
+            } else {
+                document.getElementById('errorMessage').innerText = 'Incorrect answer. Please try again.';
+            }
+        };
+    </script>
+</body>
+</html>
